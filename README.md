@@ -1,4 +1,4 @@
-# @simondotm/nx-firebase ![actions](https://github.com/simondotm/nx-firebase/actions/workflows/ci.yml/badge.svg) ![nx](https://img.shields.io/badge/Nx-v16.8.1-blue) ![npm](https://img.shields.io/npm/v/@simondotm/nx-firebase) ![downloads](https://img.shields.io/npm/dw/@simondotm/nx-firebase.svg)
+# @katsuhirogg/nx-firebase ![actions](https://github.com/simondotm/nx-firebase/actions/workflows/ci.yml/badge.svg) ![nx](https://img.shields.io/badge/Nx-v16.8.1-blue) ![npm](https://img.shields.io/npm/v/@simondotm/nx-firebase) ![downloads](https://img.shields.io/npm/dw/@simondotm/nx-firebase.svg)
 
 A plugin for [Nx](https://nx.dev) v16.8.1+ that integrates Firebase workflows in an Nx monorepo workspace.
 
