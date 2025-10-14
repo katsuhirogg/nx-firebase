@@ -6,11 +6,11 @@ You don't have to use all of these features, but the Nx-Firebase plugin ensures 
 
 Generate a new Firebase application using:
 
-**`nx g @simondotm/nx-firebase:application`**
+**`nx g @katsuhirogg/nx-firebase:application`**
 
 OR
 
-**`nx g @simondotm/nx-firebase:app`**
+**`nx g @katsuhirogg/nx-firebase:app`**
 
 | Options           | Type     | Description                                                        |
 | ----------------- | -------- | ------------------------------------------------------------------ |

@@ -1,6 +1,6 @@
-# @simondotm/nx-firebase ![actions](https://github.com/simondotm/nx-firebase/actions/workflows/ci.yml/badge.svg) ![nx](https://img.shields.io/badge/Nx-v16.8.1-blue) ![npm](https://img.shields.io/npm/v/@simondotm/nx-firebase) ![downloads](https://img.shields.io/npm/dw/@simondotm/nx-firebase.svg)
+# @katsuhirogg/nx-firebase ![actions](https://github.com/katsuhirogg/nx-firebase/actions/workflows/ci.yml/badge.svg) ![nx](https://img.shields.io/badge/Nx-v16.8.1-blue) ![npm](https://img.shields.io/npm/v/@katsuhirogg/nx-firebase) ![downloads](https://img.shields.io/npm/dw/@katsuhirogg/nx-firebase.svg)
 
-A plugin for [Nx](https://nx.dev) v16.8.1+ that integrates Firebase workflows in an Nx monorepo workspace.
+A plugin for [Nx](https://nx.dev) v21.6.4+ that integrates Firebase workflows in an Nx monorepo workspace.
 
 * Easily generate Firebase applications and functions
 * Uses `esbuild` for fast Firebase function builds so you can easily create & import shared Nx libraries with the benefits of tree-shaking
@@ -10,18 +10,18 @@ A plugin for [Nx](https://nx.dev) v16.8.1+ that integrates Firebase workflows in
 * Keeps your `firebase.json` configurations in sync when renaming or deleting Firebase apps & functions
 * Only very lightly opinionated about your Firebase configurations and workspace layouts; you can use Nx or the Firebase CLI
 
-See [CHANGELOG](https://github.com/simondotm/nx-firebase/blob/main/CHANGELOG.md) for release notes.
+See [CHANGELOG](https://github.com/katsuhirogg/nx-firebase/blob/main/CHANGELOG.md) for release notes.
 
 ## Install Plugin
 
-**`npm install @simondotm/nx-firebase --save-dev`**
+**`npm install @katsuhirogg/nx-firebase --save-dev`**
 
 - Installs this plugin into your Nx workspace
 - This will also install `@nx/node` and firebase SDK's to your root workspace `package.json` if they are not already installed
 
 ## Generate Firebase Application
 
-**`nx g @simondotm/nx-firebase:app my-new-firebase-app [--directory=dir] [--project=proj]`**
+**`nx g @katsuhirogg/nx-firebase:app my-new-firebase-app [--directory=dir] [--project=proj]`**
 
 - Generates a new Nx Firebase application project in the workspace
 - The app generator will also create a Firebase configuration file in the root of your workspace (along with a default `.firebaserc` and `firebase.json` if they don't already exist)
@@ -31,14 +31,14 @@ See [CHANGELOG](https://github.com/simondotm/nx-firebase/blob/main/CHANGELOG.md)
 
 ## Generate Firebase Function
 
-**`nx g @simondotm/nx-firebase:function my-new-firebase-function --app=my-new-firebase-app [--directory=dir]`**
+**`nx g @katsuhirogg/nx-firebase:function my-new-firebase-function --app=my-new-firebase-app [--directory=dir]`**
 
 - Generates a new Nx Firebase function application project in the workspace
 - Firebase Function projects must be linked to a Firebase application project with the `--app` option
 - Firebase Function projects can contain one or more firebase functions
 - You can generate as many Firebase Function projects as you need for your application
 
-## Build 
+## Build
 
 **`nx build my-new-firebase-app`**
 
@@ -105,7 +105,7 @@ Note that you can also use the firebase CLI directly if you prefer:
 
 ## Sync Workspace
 
-**`nx g @simondotm/nx-firebase:sync`**
+**`nx g @katsuhirogg/nx-firebase:sync`**
 
 - Ensures that your `firebase.json` configurations are kept up to date with your workspace
   - If you rename or move firebase application or firebase function projects
@@ -113,4 +113,4 @@ Note that you can also use the firebase CLI directly if you prefer:
 
 ## Further Information
 
-See the full plugin [User Guide](https://github.com/simondotm/nx-firebase/blob/main/docs/user-guide.md) for more details.
+See the full plugin [User Guide](https://github.com/katsuhirogg/nx-firebase/blob/main/docs/user-guide.md) for more details.

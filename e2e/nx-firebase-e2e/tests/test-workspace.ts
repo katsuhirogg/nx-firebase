@@ -29,7 +29,7 @@ export function testWorkspace() {
     })
 
     it('should run nx-firebase init', async () => {
-      await safeRunNxCommandAsync(`generate @simondotm/nx-firebase:init`)
+      await safeRunNxCommandAsync(`generate @katsuhirogg/nx-firebase:init`)
       // test that generator adds dependencies to workspace package.json
       const packageJson = readJson(`package.json`)
       expect(packageJson.dependencies['firebase']).toBeDefined()

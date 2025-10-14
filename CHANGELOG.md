@@ -1,4 +1,4 @@
-# @simondotm/nx-firebase Changelog
+# @katsuhirogg/nx-firebase Changelog
 
 * **Nx badges** for each release indicate the Nx version the plugin was built against, and the minimum required version of Nx to use the plugin. Each plugin release may be with earlier or future versions of Nx, but this is not always guaranteed.
 
@@ -63,11 +63,11 @@ Initial beta of plugin version 2.0.
 **Changes**
 
 - Plugin is completely rewritten
-- Added `@simondotm/nx-firebase:function` generator
+- Added `@katsuhirogg/nx-firebase:function` generator
 - Firebase functions are now separate application nx projects
 - Now uses `esbuild` to compile & bundle firebase functions
 - Firebase functions no longer require Nx libraries to be buildable
-- Added `@simondotm/nx-firebase:sync` generator to manage Firebase workspaces
+- Added `@katsuhirogg/nx-firebase:sync` generator to manage Firebase workspaces
 - Minimum Nx version is now 16.1.1
 - Watch mode build of function code & libraries is now fully supported when running Firebase emulator
 
@@ -124,11 +124,11 @@ Due to the large number of API changes in Nx from version 12 to version 13.10, t
 - **Functions Node engine**
   - Plugin now defaults to Node 16 runtime engine for firebase functions
 - **Improved Firebase configurations**
-  - `nx g @simondotm/nx-firebase:app` will now generate a `firebase.json` configuration file for the **first** firebase application in the Nx workspace. Additional generated firebase applications will have a firebase configuration named `firebase.project-name.json`
+  - `nx g @katsuhirogg/nx-firebase:app` will now generate a `firebase.json` configuration file for the **first** firebase application in the Nx workspace. Additional generated firebase applications will have a firebase configuration named `firebase.project-name.json`
 - **Project Alias Support**
-  - If you already know the firebase project alias you are using for your application, you can now use the `--project` generator parameter to set this in the project targets eg. `nx g @simondotm/nx-firebase:app appname --project=firebaseprojectalias`
+  - If you already know the firebase project alias you are using for your application, you can now use the `--project` generator parameter to set this in the project targets eg. `nx g @katsuhirogg/nx-firebase:app appname --project=firebaseprojectalias`
 - **Additional dependencies**
-  - `nx g @simondotm/nx-firebase:app` will add firebase and [`kill-port`](https://www.npmjs.com/package/kill-port) dependencies
+  - `nx g @katsuhirogg/nx-firebase:app` will add firebase and [`kill-port`](https://www.npmjs.com/package/kill-port) dependencies
   - `kill-port` is used by the `serve` and `emulate` targets to ensure clean startup.
 - **Documentation has been updated**
 
@@ -183,7 +183,7 @@ See [Nx Migration](docs/nx-migration.md) documentation for more information.
 
 **Enhanced Support for Firebase Emulators**
 
-`nx g @simondotm/nx-firebase:app` generator now additionally:
+`nx g @katsuhirogg/nx-firebase:app` generator now additionally:
 
 - Adds default `auth` and `pubsub` settings to `"emulators": {...}` config in `firebase.<appname>.json` so that these services are also emulated by default.
 
@@ -310,13 +310,13 @@ See the [README](README.md#using-nx-libraries-within-nested-sub-directories) for
 
 ## v0.3.0 ![nx](https://img.shields.io/badge/Nx-v12.3.4-blue) ![nx](https://img.shields.io/badge/Node-v12-orange)
 
-Project has been renamed from `@simondotm/nxfirebase` to `@simondotm/nx-firebase` to better match Nx plugin naming conventions. Took a deep breath and did it early before many installs occurred. Apologies to any users who this may have inconvenienced - I didn't realise I could deprecate packages until after I'd deleted & renamed the pnm project. Rest assured, I won't be making any further major modifications like this!
+Project has been renamed from `@katsuhirogg/nxfirebase` to `@katsuhirogg/nx-firebase` to better match Nx plugin naming conventions. Took a deep breath and did it early before many installs occurred. Apologies to any users who this may have inconvenienced - I didn't realise I could deprecate packages until after I'd deleted & renamed the pnm project. Rest assured, I won't be making any further major modifications like this!
 
-If you have already generated NxFirebase applications using `@simondotm/nxfirebase` you will need to migrate as follows:
+If you have already generated NxFirebase applications using `@katsuhirogg/nxfirebase` you will need to migrate as follows:
 
-1. `npm uninstall @simondotm/nxfirebase`
-2. `npm install @simondotm/nx-firebase --save-dev`
-3. Update the `builder` targets in any NxFirebase applications you already have in your `workspace.json` or `angular.json` config from `@simondotm/nxfirebase:build` to `@simondotm/nx-firebase:build`
+1. `npm uninstall @katsuhirogg/nxfirebase`
+2. `npm install @katsuhirogg/nx-firebase --save-dev`
+3. Update the `builder` targets in any NxFirebase applications you already have in your `workspace.json` or `angular.json` config from `@katsuhirogg/nxfirebase:build` to `@katsuhirogg/nx-firebase:build`
 
 ## v0.2.3 ![nx](https://img.shields.io/badge/Nx-v12.3.4-blue) ![nx](https://img.shields.io/badge/Node-v12-orange)
 

@@ -1,5 +1,5 @@
 /**
- * Custom e2e compatibility test suite for @simondotm/nx-firebase Nx plugin
+ * Custom e2e compatibility test suite for @katsuhirogg/nx-firebase Nx plugin
  * The plugin e2e test suite can be unreliable and has limitations in Jest
  * This script allows us to run full matrix e2e and regression tests of the plugin across:
  * - Node versions 14,16,18

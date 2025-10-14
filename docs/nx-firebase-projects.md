@@ -12,11 +12,11 @@
 
 [Firebase projects](https://firebase.google.com/docs/projects/learn-more) are created in the firebase web console, and then specified in your local workspace configurations as deployment targets in your `.firebaserc` file.
 
-`nx-firebase` assumes a mapping of one `@simondotm/nx-firebase:app` to one firebase CLI project and one [Firebase configuration file](./nx-firebase-project-structure.md#firebase-function-configs).
+`nx-firebase` assumes a mapping of one `@katsuhirogg/nx-firebase:app` to one firebase CLI project and one [Firebase configuration file](./nx-firebase-project-structure.md#firebase-function-configs).
 
 ## Nx Workspaces With Single Firebase Projects
 
-The first time you run `nx g @simondotm/nx-firebase:app` in an Nx workspace, it will generate a firebase configuration file called `firebase.json` in the workspace root. If you only use a single Firebase project in your Nx workspace, this will be all you need.
+The first time you run `nx g @katsuhirogg/nx-firebase:app` in an Nx workspace, it will generate a firebase configuration file called `firebase.json` in the workspace root. If you only use a single Firebase project in your Nx workspace, this will be all you need.
 
 The Firebase CLI will use this configuration file by default, and in this scenario there's no need to pass the additional `--config` CLI option.
 
@@ -24,7 +24,7 @@ The Firebase CLI will use this configuration file by default, and in this scenar
 
 This plugin supports multiple Firebase Applications/Projects inside one Nx workspace.
 
-If you run `nx g @simondotm/nx-firebase:app` in an Nx workspace that already has a `firebase.json` configuration file, it will generate a file called `firebase.<appname>.json` configuration in the Nx workspace root which can then be used with any Firebase CLI command by using the `--config <config>` [CLI option](https://firebase.google.com/docs/cli#initialize_a_firebase_project).
+If you run `nx g @katsuhirogg/nx-firebase:app` in an Nx workspace that already has a `firebase.json` configuration file, it will generate a file called `firebase.<appname>.json` configuration in the Nx workspace root which can then be used with any Firebase CLI command by using the `--config <config>` [CLI option](https://firebase.google.com/docs/cli#initialize_a_firebase_project).
 
 ## Updating Firebase Configurations
 

@@ -41,7 +41,7 @@ export async function testPlugin(cache: Cache) {
     let failed = false
     try {
       await runNxCommandAsync(
-        `g @simondotm/nx-firebase:func functions ${appsDirectory} --app=firebase`,
+        `g @katsuhirogg/nx-firebase:func functions ${appsDirectory} --app=firebase`,
       )
     } catch (err) {
       failed = true
@@ -52,11 +52,11 @@ export async function testPlugin(cache: Cache) {
 
   // generate a test firebase app
   await runNxCommandAsync(
-    `g @simondotm/nx-firebase:app firebase ${appsDirectory}`,
+    `g @katsuhirogg/nx-firebase:app firebase ${appsDirectory}`,
   )
   // generate a test firebase function
   await runNxCommandAsync(
-    `g @simondotm/nx-firebase:func functions ${appsDirectory} --app=firebase`,
+    `g @katsuhirogg/nx-firebase:func functions ${appsDirectory} --app=firebase`,
   )
   // generate a test js library
   await runNxCommandAsync(
@@ -83,7 +83,7 @@ export async function testPlugin(cache: Cache) {
 
   // check that sync runs
   await it('should sync the workspace', async () => {
-    const { stdout } = await runNxCommandAsync('g @simondotm/nx-firebase:sync')
+    const { stdout } = await runNxCommandAsync('g @katsuhirogg/nx-firebase:sync')
     expectToContain(
       stdout,
       `This workspace has 1 firebase apps and 1 firebase functions`,

@@ -1,16 +1,16 @@
 {
-  "name": "@simondotm/nx-firebase",
-  "version": "2.3.0",
+  "name": "@kgg/nx-firebase",
+  "version": "2.4.0",
   "description": "A Firebase plugin for Nx monorepo workspaces.",
-  "author": "Simon Morris",
+  "author": "KatLab",
   "license": "MIT",
-  "homepage": "https://github.com/simondotm/nx-firebase",
+  "homepage": "https://github.com/katsuhirogg/nx-firebase",
   "repository": {
     "type": "git",
-    "url": "git@github.com:simondotm/nx-firebase.git"
+    "url": "git@github.com:katsuhirogg/nx-firebase.git"
   },
   "bugs": {
-    "url": "https://github.com/simondotm/nx-firebase/issues"
+    "url": "https://github.com/katsuhirogg/nx-firebase/issues"
   },
   "keywords": [
     "Firebase",
@@ -21,9 +21,9 @@
   "generators": "./generators.json",
   "executors": "./executors.json",
   "peerDependencies": {
-    "@nx/devkit": ">= 16.8.1",
-    "@nx/workspace": ">= 16.8.1",
-    "nx": ">= 16.8.1"
+    "@nx/devkit": ">= 21.5.1",
+    "@nx/workspace": ">= 21.5.1",
+    "nx": ">= 21.5.1"
   },
   "dependencies": {}
 }

@@ -7,7 +7,7 @@ export interface Schema {
   tags?: string
   projectNameAndRootFormat?: ProjectNameAndRootFormat
   rootProject?: boolean
-  // extra options for @simondotm/nx-firebase:app generator
+  // extra options for @katsuhirogg/nx-firebase:app generator
   project?: string
   // firebaseProject?: string
   // firebaseConfig?: string

@@ -47,11 +47,11 @@ Nx-Firebase functions are generated as individual Nx application projects, separ
 
 Generate a new Firebase function using:
 
-- **`nx g @simondotm/nx-firebase:function`**
+- **`nx g @katsuhirogg/nx-firebase:function`**
 
 OR
 
-- **`nx g @simondotm/nx-firebase:func`**
+- **`nx g @katsuhirogg/nx-firebase:func`**
 
 | Options                     | Type          | Description                                                |
 | --------------------------- | ------------- | ---------------------------------------------------------- |

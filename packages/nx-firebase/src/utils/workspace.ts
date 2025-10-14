@@ -54,12 +54,12 @@ export function checkNxVersion() {
   if (workspaceNxVersion) {
     if (workspaceNxVersion.major !== pluginNxVersionMajor) {
       logger.warn(
-        `WARNING: This version of @simondotm/nx-firebase plugin was built for Nx version ^${packageVersions.nx}, and may not be compatible with your version of Nx (${workspaceNxVersion.version})`,
+        `WARNING: This version of @katsuhirogg/nx-firebase plugin was built for Nx version ^${packageVersions.nx}, and may not be compatible with your version of Nx (${workspaceNxVersion.version})`,
       )
     }
   } else {
     logger.warn(
-      `@simondotm/nx-firebase plugin could not determine your version of Nx. It may not be compatible.`,
+      `@katsuhirogg/nx-firebase plugin could not determine your version of Nx. It may not be compatible.`,
     )
   }
 }

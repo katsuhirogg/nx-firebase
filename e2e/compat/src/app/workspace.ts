@@ -54,7 +54,7 @@ export async function installPlugin(cache: Cache) {
     )
   } else {
     await customExec(
-      `${PACKAGE_MANAGER} i @simondotm/nx-firebase@${cache.pluginVersion} --save-dev ${legacyPeerDeps}`,
+      `${PACKAGE_MANAGER} i @katsuhirogg/nx-firebase@${cache.pluginVersion} --save-dev ${legacyPeerDeps}`,
     )
   }
 }
@@ -86,7 +86,7 @@ export async function createWorkspace(cache: Cache) {
   // we meed this plugin for test suite libs
   // update: @nx/node plugin brings in this dependency
   // https://github.com/nrwl/nx/blob/fb90767af87c77955f8b8b7cace7cd0b5e3be27d/packages/node/package.json#L32
-  // so we dont need to install it here as long as we run @simondotm/nx-firebase:init first
+  // so we dont need to install it here as long as we run @katsuhirogg/nx-firebase:init first
   // await customExec(`npm i @nx/js@${cache.nxVersion} --save-dev`)
 
   if (!cache.deferPluginInstall) {
@@ -101,7 +101,7 @@ export async function createWorkspace(cache: Cache) {
 
     // run the plugin initialiser to ensure we have the correct dependencies installed
     info(`Initialising plugin in workspace...`)
-    await runNxCommandAsync(`g @simondotm/nx-firebase:init`)
+    await runNxCommandAsync(`g @katsuhirogg/nx-firebase:init`)
   }
 
   // if (cache.disableDaemon) {

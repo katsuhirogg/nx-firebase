@@ -91,7 +91,7 @@ export async function appGeneratorAsync(
 ) {
   testDebug(`- appGeneratorAsync ${projectData.projectName} ${params}`)
   const result = await safeRunNxCommandAsync(
-    `g @simondotm/nx-firebase:app ${projectData.name} --directory=${projectData.directory} ${params}`,
+    `g @katsuhirogg/nx-firebase:app ${projectData.name} --directory=${projectData.directory} ${params}`,
   )
   return result
 }
@@ -102,7 +102,7 @@ export async function functionGeneratorAsync(
 ) {
   testDebug(`- functionGeneratorAsync ${projectData.projectName} ${params}`)
   const result = await safeRunNxCommandAsync(
-    `g @simondotm/nx-firebase:function ${projectData.name} --directory=${projectData.directory} ${params}`,
+    `g @katsuhirogg/nx-firebase:function ${projectData.name} --directory=${projectData.directory} ${params}`,
   )
   return result
 }
@@ -120,13 +120,13 @@ export async function libGeneratorAsync(
 
 export async function syncGeneratorAsync(params: string = '') {
   testDebug(`- syncGeneratorAsync ${params}`)
-  return await safeRunNxCommandAsync(`g @simondotm/nx-firebase:sync ${params}`)
+  return await safeRunNxCommandAsync(`g @katsuhirogg/nx-firebase:sync ${params}`)
 }
 
 export async function migrateGeneratorAsync(params: string = '') {
   testDebug(`- migrateGeneratorAsync ${params}`)
   return await safeRunNxCommandAsync(
-    `g @simondotm/nx-firebase:migrate ${params}`,
+    `g @katsuhirogg/nx-firebase:migrate ${params}`,
   )
 }
 

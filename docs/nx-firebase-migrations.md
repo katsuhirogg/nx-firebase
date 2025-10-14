@@ -20,8 +20,8 @@ Plugin version 2.1 [added some new features](../CHANGELOG.md#v210) that required
 
 To help with this & future updates, an automatic migration generator has been added:
 
-- Update to the latest plugin using `npm i @simondotm/nx-firebase@latest --save-dev`
-- Run **npx nx g @simondotm/nx-firebase:migrate**
+- Update to the latest plugin using `npm i @katsuhirogg/nx-firebase@latest --save-dev`
+- Run **npx nx g @katsuhirogg/nx-firebase:migrate**
 
 This tool will run checks on your workspace firebase apps, functions and configurations and try to ensure they are correctly configured for compatibility with the plugin version you are using.
 
@@ -35,7 +35,7 @@ Version 2.x of this plugin has been completely rewritten, and uses a completely 
 
 - First of all, your workspace will need to be migrated to at least Nx 16.1.1.
 
-- Next, update the `@simondotm/nx-firebase` plugin package to the latest v2.x version.
+- Next, update the `@katsuhirogg/nx-firebase` plugin package to the latest v2.x version.
 
 ### 2. Firebase Project Migration
 

@@ -107,7 +107,7 @@ The `nx-firebase` plugin executors focus only on backend deployment and function
 
 That said, typically only certain combinations of Nx/Firebase/Node versions make sense and it can be tricky to get versions aligned depending on which workspace configurations are required for a project.
 
-New applications generated in new Nx workspaces by `@simondotm/nx-firebase` will install:
+New applications generated in new Nx workspaces by `@katsuhirogg/nx-firebase` will install:
 
 - Functions with `nodejs16` runtime enabled
 - `firebase-tools` version 11.x

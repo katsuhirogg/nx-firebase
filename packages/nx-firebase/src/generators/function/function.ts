@@ -21,7 +21,7 @@ import { packageVersions } from '../../__generated__/nx-firebase-versions'
 export async function normalizeOptions(
   host: Tree,
   options: Schema,
-  callingGenerator = '@simondotm/nx-firebase:function',
+  callingGenerator = '@katsuhirogg/nx-firebase:function',
 ): Promise<NormalizedSchema> {
   const {
     projectName: appProjectName,

@@ -28,7 +28,7 @@ Until Nx fix this problem, we are using an experimental executor in the plugin a
 
 The `serve` target in Firebase app `project.json` configurations is using:
 
-- `@simondotm/nx-firebase:serve`
+- `@katsuhirogg/nx-firebase:serve`
 
 instead of
 

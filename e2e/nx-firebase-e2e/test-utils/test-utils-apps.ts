@@ -61,7 +61,7 @@ export function expectedAppProjectTargets(appProject: ProjectData) {
       },
     },
     serve: {
-      executor: '@simondotm/nx-firebase:serve',
+      executor: '@katsuhirogg/nx-firebase:serve',
       options: {
         commands: [
           `nx run ${appProject.projectName}:watch`,

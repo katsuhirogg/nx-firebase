@@ -44,7 +44,7 @@ jest.setTimeout(JEST_TIMEOUT)
 // check that libraries can be buildable and non-buildable
 // check that build includes building of dependent functions
 
-const pluginName = '@simondotm/nx-firebase'
+const pluginName = '@katsuhirogg/nx-firebase'
 const pluginPath = 'dist/packages/nx-firebase'
 const workspaceLayout = {
   appsDir: 'apps',

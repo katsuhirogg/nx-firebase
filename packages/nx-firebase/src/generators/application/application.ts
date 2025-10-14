@@ -17,7 +17,7 @@ import { determineProjectNameAndRootOptions } from '@nx/devkit/src/generators/pr
 export async function normalizeOptions(
   host: Tree,
   options: Schema,
-  callingGenerator = '@simondotm/nx-firebase:application',
+  callingGenerator = '@katsuhirogg/nx-firebase:application',
 ): Promise<NormalizedSchema> {
   const {
     projectName: appProjectName,
@@ -177,7 +177,7 @@ export async function applicationGenerator(
         },
       },
       serve: {
-        executor: '@simondotm/nx-firebase:serve',
+        executor: '@katsuhirogg/nx-firebase:serve',
         options: {
           commands: [
             `nx run ${options.projectName}:watch`,
