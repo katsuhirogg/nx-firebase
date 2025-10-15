@@ -2,6 +2,10 @@ import { getProjects, readProjectConfiguration, Tree } from '@nx/devkit'
 import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing'
 import { applicationGenerator } from './application'
 
+/** Silence prettier v3 warnings until Jest v30 is supported by Nx. See:
+ * https://github.com/nrwl/nx/issues/26387#issuecomment-2163682690 */
+jest.mock('prettier', () => null)
+
 describe('application generator', () => {
   let tree: Tree
 
@@ -22,6 +26,7 @@ describe('application generator', () => {
     await applicationGenerator(tree, {
       name: 'myFirebaseApp',
     })
+
     const project = readProjectConfiguration(tree, 'my-firebase-app')
     expect(project.root).toEqual('apps/my-firebase-app')
     expect(project.targets).toEqual(

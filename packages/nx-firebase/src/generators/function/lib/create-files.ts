@@ -6,7 +6,7 @@ import {
   generateFiles,
   joinPathFragments,
 } from '@nx/devkit'
-import type { NormalizedSchema } from '../schema'
+import type { FunctionGeneratorNormalizedSchema } from '../schema'
 import { packageVersions } from '../../../__generated__/nx-firebase-versions'
 
 /**
@@ -15,7 +15,10 @@ import { packageVersions } from '../../../__generated__/nx-firebase-versions'
  * @param host
  * @param options
  */
-export function createFiles(host: Tree, options: NormalizedSchema): void {
+export function createFiles(
+  host: Tree,
+  options: FunctionGeneratorNormalizedSchema,
+): void {
   const firebaseAppConfig = options.firebaseConfigName
   const firebaseAppConfigPath = joinPathFragments(
     offsetFromRoot(options.projectRoot),
@@ -37,6 +40,7 @@ export function createFiles(host: Tree, options: NormalizedSchema): void {
     // firebaseNodeEngine,
 
     moduleType: options.format === 'esm' ? 'module' : 'commonjs',
+    offset: offsetFromRoot(options.projectRoot),
   }
 
   // The default functions package.json & templated typescript source files are added here
@@ -56,9 +60,8 @@ export function createFiles(host: Tree, options: NormalizedSchema): void {
   // set dependencies for the firebase function
   const firebasePackageDependencies = {}
   if (detectPackageManager() === 'pnpm') {
-    firebasePackageDependencies[
-      '@google-cloud/functions-framework'
-    ] = `^${packageVersions.googleCloudFunctionsFramework}`
+    firebasePackageDependencies['@google-cloud/functions-framework'] =
+      `^${packageVersions.googleCloudFunctionsFramework}`
   }
 
   if (Object.keys(firebasePackageDependencies).length > 0) {

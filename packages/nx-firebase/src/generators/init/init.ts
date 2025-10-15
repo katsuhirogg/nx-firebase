@@ -4,11 +4,12 @@ import {
   type Tree,
   formatFiles,
 } from '@nx/devkit'
-import { addDependencies, addGitIgnore, addNxIgnore } from './lib'
+import { addDependencies } from './lib'
+import { addGitIgnore, addNxIgnore } from './lib/add-git-ignore-entry'
 import type { InitGeneratorOptions } from './schema'
 
 /**
- * `nx g @katsuhirogg/nx-firebase:init`
+ * `nx g @simondotm/nx-firebase:init`
  *
  * Ensures the necessary firebase packages are installed in the nx workspace
  * It also adds `@nx/node` if it is not already installed

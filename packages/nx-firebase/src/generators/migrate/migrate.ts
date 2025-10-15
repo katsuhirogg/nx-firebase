@@ -147,7 +147,7 @@ export default async function migrateGenerator(
   // [2.0.0 -> 2.1.0] change firebase serve target
   workspace.firebaseAppProjects.forEach((project, name) => {
     const serve = project.targets['serve']
-    const serveExecutor = '@katsuhirogg/nx-firebase:serve'
+    const serveExecutor = '@simondotm/nx-firebase:serve'
     if (serve.executor !== serveExecutor) {
       serve.executor = serveExecutor
       logger.info(`MIGRATE Updated serve target for firebase app '${name}'`)

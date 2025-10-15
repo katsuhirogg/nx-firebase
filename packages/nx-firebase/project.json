@@ -1,5 +1,5 @@
 {
-  "name": "nx-firebase",
+  "name": "@kgg/nx-firebase",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/nx-firebase/src",
   "targets": {
@@ -36,7 +36,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/nx-firebase/**/*.ts"]

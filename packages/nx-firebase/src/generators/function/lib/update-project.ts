@@ -2,68 +2,80 @@ import {
   Tree,
   readProjectConfiguration,
   updateProjectConfiguration,
+  joinPathFragments, // 👈 Make sure this is imported
 } from '@nx/devkit'
-import type { NormalizedSchema } from '../schema'
+import type { FunctionGeneratorNormalizedSchema } from '../schema'
 import type { FunctionAssetsEntry, FunctionAssetsGlob } from '../../../types'
 
-export function updateProject(host: Tree, options: NormalizedSchema): void {
+export function updateProject(
+  host: Tree,
+  options: FunctionGeneratorNormalizedSchema,
+): void {
   const project = readProjectConfiguration(host, options.projectName)
-
   const firebaseAppProject = options.firebaseAppProject
 
-  // replace the default node build target with a simplified version
-  // we dont need dev/production build configurations for firebase functions since its a confined secure environment
+  // Defensively create the targets object if it doesn't exist.
+  project.targets ??= {}
+
+  /**
+   * Manually construct the paths. Do not read from project.targets.build
+   * as it is no longer created by the base @nx/node generator.
+   */
+  const outputPath = joinPathFragments('dist', options.projectRoot)
+  const main = joinPathFragments(options.projectRoot, 'src', 'main.ts')
+  const tsConfig = joinPathFragments(options.projectRoot, 'tsconfig.app.json')
+  const assets: FunctionAssetsEntry[] = [
+    joinPathFragments(options.projectRoot, 'src', 'assets'),
+  ]
+
+  /**
+   * Create the build target from scratch with a simplified version.
+   * We don't need dev/production build configurations for Firebase Functions.
+   */
   project.targets.build = {
     executor: '@nx/esbuild:esbuild',
     outputs: ['{options.outputPath}'],
     options: {
-      outputPath: project.targets.build.options.outputPath,
-      main: project.targets.build.options.main,
-      tsConfig: project.targets.build.options.tsConfig,
-      assets: project.targets.build.options.assets,
+      outputPath, // Use the newly constructed path
+      main,       // Use the newly constructed path
+      tsConfig,   // Use the newly constructed path
+      assets,     // Use the newly constructed assets array
       generatePackageJson: true,
-      // these are the defaults for esbuild, but let's set them anyway
       platform: 'node',
       bundle: true,
       thirdParty: false,
-      dependenciesFieldType: 'dependencies',
-      target: 'node16',
-      format: [options.format || 'esm'], // default for esbuild is esm
+      target: 'node20',
+      format: [options.format ?? 'esm'],
       esbuildOptions: {
         logLevel: 'info',
       },
     },
   }
 
-  // add reference to firebase app environment assets
+  // Add a reference to the firebase app's environment assets.
   const firebaseAppRoot = firebaseAppProject.root
-  const assets: FunctionAssetsEntry[] = project.targets.build.options.assets
   const glob: FunctionAssetsGlob = {
     glob: '**/*',
     input: `${firebaseAppRoot}/environment`,
     output: '.',
   }
-  assets.push(glob)
+  project.targets.build.options.assets.push(glob)
 
-  // add deploy target
+  // Add the deploy target.
   project.targets.deploy = {
     executor: 'nx:run-commands',
     options: {
-      // command: `firebase deploy${firebaseProject} --config=${firebaseConfig}`,
-      // use the firebase app to deploy, this way the function does not need to know the project or config
       command: `nx run ${firebaseAppProject.name}:deploy --only functions:${options.projectName}`,
     },
     dependsOn: ['build'],
   }
 
-  // Remove default node app serve target
-  // No serve target for functions, since we may have multiple functions in a firebase project
-  // Instead we serve at the firebase app project
+  // Remove the serve target created by the node generator.
   delete project.targets.serve
 
   updateProjectConfiguration(host, options.projectName, project)
 
-  // Add function project as implicit dep of firebase app project
+  // Add the function project as an implicit dependency of the Firebase app project.
   firebaseAppProject.implicitDependencies ||= []
   firebaseAppProject.implicitDependencies.push(options.projectName)
   firebaseAppProject.implicitDependencies.sort()

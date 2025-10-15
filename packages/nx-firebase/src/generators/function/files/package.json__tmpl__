@@ -14,6 +14,8 @@
   "dependencies": {
   },
   "devDependencies": {
+    "@types/node": "*",
+    "typescript": "*"
   },
   "private": true
 }

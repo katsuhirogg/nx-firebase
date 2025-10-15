@@ -5,6 +5,9 @@ dist
 tmp
 /out-tsc
 
+# generated
+__generated__
+
 # dependencies
 node_modules
 
@@ -42,5 +45,6 @@ Thumbs.db
 e2e.log
 
 .nx/cache
+.nx/workspace-data
 
 .nx-firebase

@@ -6,3 +6,6 @@ onlyBuiltDependencies:
   - protobufjs
   - re2
   - unrs-resolver
+
+overrides:
+  '@kgg/nx-firebase': link:C:/Users/Luiz_/AppData/Roaming/pnpm/global/5/node_modules/@kgg/nx-firebase
